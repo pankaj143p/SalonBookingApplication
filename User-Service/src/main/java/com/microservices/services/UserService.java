@@ -1,8 +1,13 @@
 package com.microservices.services;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.microservices.model.User;
 
-@RestController
-public class UserService {
+import java.util.List;
 
+public interface UserService {
+    User createUser(User user);
+    User getUserById(Long id);
+    List<User> getAllUsers();
+    void deleteUser(Long id);
+    User updateUser(Long id, User user);
 }
