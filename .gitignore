@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 ./User-Service/src/main/resources/application.properties
+**/application.properties
+Microservices/User-Service/src/main/resources/application.properties
 
 ### STS ###
 .apt_generated
