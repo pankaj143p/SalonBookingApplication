@@ -11,7 +11,7 @@
 	<groupId>com.microservice</groupId>
 	<artifactId>saloonservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>saloonservice</name>
+	<name>salonservice</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
