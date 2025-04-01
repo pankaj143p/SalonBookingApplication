@@ -15,17 +15,41 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SalonServiceImplementation implements SalonService {
 
-    @Autowired
+//    @Autowired
     private final SalonRepository sloSalonRepository;
 
     @Override
-    public SalonDTO createSaloon(SalonDTO salon, UserDTO user) {
-        return null;
+    public Salon createSaloon(SalonDTO req, UserDTO user) {
+       Salon salon = new Salon();
+       salon.setName(req.getName());
+       salon.setAddress(req.getAddress());
+       salon.setCity(req.getCity());
+       salon.setImages(req.getImages());
+       salon.setOwnerId(req.getOwnerId());
+       salon.setEmail(req.getEmail());
+       salon.setOpenTime(req.getOpenTime());
+       salon.setCloseTime(req.getCloseTime());
+       salon.setPhoneNumber((req.getPhoneNumber()));
+
+        return sloSalonRepository.save(salon);
     }
 
     @Override
     public Salon updateSalon(SalonDTO salon, UserDTO user, Long salonId) {
-        return null;
+        Salon existingSalon = sloSalonRepository.findById(salonId).orElse(null);
+        if(existingSalon != null){
+            existingSalon.setName(salon.getName());
+            existingSalon.setAddress(salon.getAddress());
+            existingSalon.setCity(salon.getCity());
+            existingSalon.setImages(salon.getImages());
+            existingSalon.setOwnerId(salon.getOwnerId());
+            existingSalon.setEmail(salon.getEmail());
+            existingSalon.setOpenTime(salon.getOpenTime());
+            existingSalon.setCloseTime(salon.getCloseTime());
+            existingSalon.setPhoneNumber(salon.getPhoneNumber());
+            return sloSalonRepository.save(existingSalon);
+        }
+       return null;
     }
 
     @Override
