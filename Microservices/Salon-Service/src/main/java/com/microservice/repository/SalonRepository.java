@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-interface SaloonRepository extends JpaRepository<Salon, Long> {
+public interface SalonRepository extends JpaRepository<Salon, Long> {
    Salon findByOwnerId(Long id);
 
    @Query(

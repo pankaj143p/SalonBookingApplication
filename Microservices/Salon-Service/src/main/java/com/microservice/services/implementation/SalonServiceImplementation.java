@@ -3,16 +3,23 @@ package com.microservice.services.implementation;
 import com.microservice.model.Salon;
 import com.microservice.payload.dto.SalonDTO;
 import com.microservice.payload.dto.UserDTO;
+import com.microservice.repository.SalonRepository;
 import com.microservice.services.SalonService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
+public class SalonServiceImplementation implements SalonService {
 
-public class SaloonServiceImplementation implements SalonService {
+    @Autowired
+    private final SalonRepository sloSalonRepository;
+
     @Override
-    public Salon createSaloon(SalonDTO salon, UserDTO user) {
+    public SalonDTO createSaloon(SalonDTO salon, UserDTO user) {
         return null;
     }
 
